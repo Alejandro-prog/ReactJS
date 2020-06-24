@@ -1,9 +1,38 @@
 import React from 'react';
-import WeatherExtraInfo from './WeatherExtraInfo';
+import WeatherIcons from 'react-weathericons';
+import {
+    CLOUD,
+    CLOUDY, 
+    SUN,
+    RAIN,
+    SNOW,
+    WINDY,       
+} from './../constants/Weather';
 
-const WeatherTemperature = () => (
+const icons = {
+    [CLOUD]: "coud",
+    [CLOUDY]: "cloudy", 
+    [SUN]: "day-sunny",
+    [RAIN]: "rain",
+    [SNOW]: "snow",
+    [WINDY]: "windy",  
+};
+
+const getWeatherIcon = weatherState =>   {
+    const icon = icons[weatherState];
+    if(icon)
+        return <WeatherIcons name={icon} size="2x"></WeatherIcons>
+    else
+        return <WeatherIcons name={"day-sunny"} size="2x"></WeatherIcons>
+}
+
+
+const WeatherTemperature = ({ temperature, weatherState }) => (
     <div>
-        <span>25°</span>
+        {
+                getWeatherIcon(weatherState)
+        }
+        <span>{`${temperature} C°`}</span>
     </div>
 );
 
