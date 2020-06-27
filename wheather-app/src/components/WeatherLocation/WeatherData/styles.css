@@ -3,16 +3,18 @@
     width: 400px;
     height: 100px;
     line-height: 100px;
+    border-radius:  5px;
+    margin: 15px;
 }
 
 .watherExtraInfoCont{
-    background-color: gray;
     width: 40%;
     display: inline-block;
+    line-height: 28px;
+    text-align: left;
 }
 
-.weatherTemperatureCont  {
-    background-color: aqua;
+.weatherTemperatureCont  {  
     width: 60%;
     display: inline-block;
 }
@@ -21,10 +23,21 @@
     font-size: 30px;
     font-weight: bold;
     padding-left: 20px;
-    color: #333;    
+    color: white;    
 }
 
 .temperatureType {
     font-weight: bold;
     color: #fff;
+}
+
+.extraInfoText {
+    display: block;
+    color: #333;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+.wicon {
+    color: indigo;
 }
