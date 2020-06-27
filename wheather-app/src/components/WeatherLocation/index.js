@@ -7,17 +7,16 @@ import {
     RAIN, 
 } from './../../constants/Weather';
 
+const location = "Bogota,co";
+const api_key = "e0cd1ca1b7c0d4e6ffa6755e2fefab91";
+const url_base_weather = "http://api.openweathermap.org/data/2.5/weather";
+
+const api_weather = `${url_base_weather}?q=${location}&appid=${api_key}&units=metric`;
+
 const data = {
     temperature: 5,
     weatherState: RAIN,
     humidity: 10,
-    wind: '10 m/s',
-}
-
-const data2 = {
-    temperature: 5,
-    weatherState: WINDY,
-    humidity: 20,
     wind: '10 m/s',
 }
 
@@ -31,12 +30,38 @@ class WeatherLocation extends Component {
         };
     }
 
-    handleUpdateClick = () => {
-        console.log("ACTUALIZADO");
+    getWeatherState = Weather_data => {
+        return RAIN
+    }
 
-        this.setState({
-            data: data2,
-        })
+    getData = weather_data => {
+        const { humidity, temp } = weather_data.main;
+        const { speed } = weather_data.wind;
+        const weatherState = RAIN
+
+        const data = {
+            humidity,
+            temperature: temp,
+            weatherState,
+            wind: `${speed} m/s`,
+        }
+
+        return data;
+    }
+    handleUpdateClick = () => {
+        fetch(api_weather).then( resolve => {
+
+            return resolve.json();
+        }).then(data => {
+
+            const newWeather = this.getData(data);
+            console.log(newWeather);
+            debugger;
+            this.setState({
+                data: newWeather
+            });
+
+        });
     }
     render () {
         const { city, data }  = this.state;
