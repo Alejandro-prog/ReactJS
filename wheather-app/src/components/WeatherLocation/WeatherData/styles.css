@@ -21,14 +21,15 @@
 
 .temperature {
     font-size: 30px;
-    font-weight: bold;
+    font-weight: bolder;
     padding-left: 20px;
     color: white;    
 }
 
 .temperatureType {
-    font-weight: bold;
+    font-weight: bolder;
     color: #fff;
+
 }
 
 .extraInfoText {
