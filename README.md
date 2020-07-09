@@ -1,2 +1,3 @@
 # ReactJS
-Wheather-App
+Weather-App
+Sin terminar
