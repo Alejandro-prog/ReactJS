@@ -1,19 +1,16 @@
 import React from 'react';
-import PropTypes from 'prop-types'
+import PropTypes from 'prop-types';
 import './style.css';
 
-const Location  = (props) => {
-    //Destructuring
-    const { city } = props    ;
+const Location = ({ city }) => (
+        <div className="locationCont">
+            <h1>
+                {city}
+            </h1>
+        </div>
+);
 
-    return (
-    <div className="locationCont">   
-        <h1>{city}</h1>
-    </div>
-    );
-};
-
-Location.propType = {
+Location.propTypes = {
     city: PropTypes.string.isRequired,
 };
 

@@ -50,7 +50,7 @@ class App extends Component {
               <Paper elevation={4}>
                   <div className="details">
                     {
-                     !city &&
+                     city &&
                         <ForecastExtended city={city}></ForecastExtended>
                     }
                   </div>

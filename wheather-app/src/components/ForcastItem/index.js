@@ -1,9 +1,14 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
-const ForcastItem = () => (
+const ForcastItem = ({ weekDay }) => (
     <div>
-        Item
+        { weekDay }
     </div>
 );
+
+ForcastItem.propTypes = {
+    weekDay: PropTypes.string.isRequired,
+}
 
 export default ForcastItem;
