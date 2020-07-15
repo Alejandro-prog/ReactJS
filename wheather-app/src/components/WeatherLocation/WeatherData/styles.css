@@ -1,10 +1,12 @@
 .weatherDataCont {
     background-color: aqua;
-    width: 400px;
+    width: 93%;
     height: 100px;
     line-height: 100px;
     border-radius:  5px;
     margin: 15px;
+    padding: 5px;
+    box-sizing: border-box;
 }
 
 .watherExtraInfoCont{
@@ -20,16 +22,16 @@
 }
 
 .temperature {
-    font-size: 30px;
+    font-size: 50px;
     font-weight: bolder;
-    padding-left: 20px;
-    color: white;    
+    padding-left: 10px;
+    color: #3300FF;    
 }
 
 .temperatureType {
+    font-size: 25px;
     font-weight: bolder;
-    color: #fff;
-
+    color: #3300FF;
 }
 
 .extraInfoText {
@@ -41,4 +43,6 @@
 
 .wicon {
     color: indigo;
+    padding-top: 5px;
+    padding-left: 10px;
 }
