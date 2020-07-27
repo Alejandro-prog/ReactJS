@@ -14,9 +14,9 @@ const days = [
 ];
 
 class ForecastExteded extends Component {
-
+ 
     renderForcastItemDays(){
-        return days.map( day => (<ForcastItem weekDay={day}></ForcastItem>));
+        return days.map( day => (<ForcastItem weekDay={day} hour={10}></ForcastItem>));
     }
 
     render() {
