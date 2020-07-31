@@ -2,4 +2,13 @@
   background-color: gray;
   height: 87vh;
   width: 100%;
+  overflow: auto; 
+}
+
+@media (max-width: 64em){
+  .details{
+      max-height: 52vh;
+      overflow: auto;
+      margin-bottom: 20px;
+  }
 }

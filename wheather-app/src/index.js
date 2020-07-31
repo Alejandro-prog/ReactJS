@@ -5,6 +5,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
+  //punto de entrada de nuestra aplicación 
   <React.StrictMode>
     <App />
   </React.StrictMode>,
