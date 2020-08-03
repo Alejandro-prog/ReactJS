@@ -21,19 +21,28 @@ const data = {
     wind: 'normal',  
 };
 */ 
+
+const api_key = "4b9054792f165728184681ca23242f89";
+const url = "http://api.openweathermap.org/data/2.5/forecast";
+
 class ForecastExteded extends Component {
  
     constructor(){
         super();
         this.state = { forecastData: null }     
     }
+
     renderForcastItemDays(){
         return "Render Items";
        /* return days.map( day => (<ForcastItem weekDay={day} hour={10} data={data}></ForcastItem>));*/
     }
 
+    componentDidMount() {
+        
+    }
+
     renderProgress = () => {
-        return "Cargando Pronostico estendido";
+        return <h3>Cargando Pronostico estendido</h3>;
     }
     render() {
         const { city } = this.props;  
