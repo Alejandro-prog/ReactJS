@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import transformForecast from './../services/transformForecast';
 import './styles.css';
-import ForcastItem from './ForcastItem';
+
 /*
 const days = [
     'Lunes',
@@ -33,12 +34,24 @@ class ForecastExteded extends Component {
     }
 
     renderForcastItemDays(){
-        return "Render Items";
+        return <h1>Render Items</h1>;
        /* return days.map( day => (<ForcastItem weekDay={day} hour={10} data={data}></ForcastItem>));*/
     }
 
     componentDidMount() {
+        //fe tch or axios 
+        const url_forcast = `${url}?q=${this.props.city}&appid=${api_key}`;
         
+        fetch(url_forcast).then(
+            data => (data.json())
+        ).then(
+            weather_data => {
+                console.log(weather_data);
+                const forecastData =  transformForecast(weather_data);
+                this.setState({ forecastData });  
+                    
+            }
+        ); 
     }
 
     renderProgress = () => {
